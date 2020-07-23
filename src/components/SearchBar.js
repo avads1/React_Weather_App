@@ -20,27 +20,17 @@ class SearchBar extends Component {
 
   sendValueToParent(event) {
     event.preventDefault();
-    // Check if the input field has been submitted empty or if it contains numbers
-    // if (this.state.value.trim() === "" || this.state.value.match(/\d+/g) !== null) {
-    //   this.setState({ warning: true });
-    // } else {
     this.props.callBackFromParent(this.state.value);
-    // this.setState({ warning: false });
-    // }
   }
 
   render() {
     const errorMessage = (
       <Message error header="There was an error" content={this.props.error} />
     );
-    // const warningMessage = (
-    //   <Message warning header="Please check that you've entered a valid city" />
-    // );
 
     return (
       <div className="SearchBar">
         {this.props.error && errorMessage}
-        {/* {this.state.warning && warningMessage} */}
         <Form onSubmit={this.sendValueToParent}>
           <Input
             className="SearchBar-input"
