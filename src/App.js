@@ -3,8 +3,6 @@ import "./css/App.css";
 
 import SearchBar from "./components/SearchBar";
 import WeatherCard from "./components/WeatherCard";
-// import Favorites from "./components/Favorites";
-// import API_KEY from "./config.js";
 
 class App extends Component {
   constructor(props) {
@@ -21,9 +19,7 @@ class App extends Component {
       // hasSavedCities: false,
       errorMessage: ""
     };
-
     this.getWeatherData = this.getWeatherData.bind(this);
-    // this.updateSavedCities = this.updateSavedCities.bind(this);
   }
 
   getWeatherData(city) {
@@ -45,7 +41,6 @@ class App extends Component {
         });
       })
       .catch(error => {
-        // If an error is catch, it's sent to SearchBar as props
         this.setState({ errorMessage: error.message });
       });
     
@@ -57,31 +52,10 @@ class App extends Component {
     }
   }
 
-  // updateSavedCities(cityArr) {
-  //   // hasCities is set to true if length is more than 0, otherwise false
-  //   const hasCities = cityArr.length > 0;
-  //   this.setState({ savedCities: cityArr, hasSavedCities: hasCities });
-  // }
-
-  // componentWillMount() {
-  //   // See if there's saved cities in localStorage before the App is mounted
-  //   // Tests didn't like parsing when localStorage.getItem was undefined, so this was my solution for it
-  //   let existingCities = JSON.parse(localStorage.getItem("cityList") || "[]");
-
-  //   if (existingCities.length !== 0) {
-  //     this.setState({
-  //       hasSavedCities: true,
-  //       savedCities: existingCities
-  //     });
-  //   }
-  // }
-
   render() {
     const {
       searchDone,
       weatherData,
-      // hasSavedCities,
-      // savedCities,
       errorMessage
     } = this.state;
     
@@ -96,16 +70,8 @@ class App extends Component {
         {searchDone && (
           <WeatherCard
             weatherData={weatherData}
-            // savedCities={savedCities}
-            // callBackFromParent={this.updateSavedCities}
           />
         )}
-        {/* {hasSavedCities && (
-          <Favorites
-            savedCities={savedCities}
-            callBackFromParent={this.callWeatherData}
-          />
-        )} */}
       </div>
     );
   }
