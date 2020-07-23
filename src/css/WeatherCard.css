@@ -1,0 +1,37 @@
+.WeatherCard {
+  border: 1px solid dodgerblue;
+  border-radius: 25px;
+  box-shadow: .15rem .15rem .5rem rgba(0, 0, 0, 0.1);
+  margin: auto;
+  padding: 2rem;
+  width: 20rem;
+  text-align: center;
+  animation: horizontalFlipIn 1s;
+  background-color: aquamarine;
+}
+
+.WeatherCard-icon-container {
+  font-size: 4.5rem;
+  margin: 2rem 0 0;
+  
+}
+
+.WeatherCard-icon {
+  margin: 0 0 2rem;
+}
+
+.WeatherCard-degrees {
+  font-size: 2rem;
+  margin: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.WeatherCard-city{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 2rem;
+}
+
+p{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 1rem;
+}
