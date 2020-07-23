@@ -1,0 +1,14 @@
+.App {
+  display: flex;
+  text-align: center;
+  flex-flow: column wrap;
+}
+
+h1{
+  /* font-family: Arial Black, Gadget, sans-serif; */
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+h2{
+  font-family: Impact, Charcoal, sans-serif;
+}
