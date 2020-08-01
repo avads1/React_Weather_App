@@ -14,4 +14,4 @@ APIS Used :
 - Go to http://localhost:3000
 
 #### Snapshot
-[Demo] (https://github.com/avads1/React_Weather_App/blob/master/demo.gif)
+![Demo] (https://github.com/avads1/React_Weather_App/blob/master/demo.gif)
