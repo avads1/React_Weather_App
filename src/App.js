@@ -15,8 +15,6 @@ class App extends Component {
         temp: 0
       },
       searchDone: false,
-      // savedCities: [],
-      // hasSavedCities: false,
       errorMessage: ""
     };
     this.getWeatherData = this.getWeatherData.bind(this);
@@ -30,7 +28,7 @@ class App extends Component {
       .then(data => {
         const weatherObj = {
           weather: data.weather,
-          city: data.name,          
+          city: data.name,
           country: data.sys.country,
           temp: data.main.temp
         };
@@ -43,7 +41,7 @@ class App extends Component {
       .catch(error => {
         this.setState({ errorMessage: error.message });
       });
-    
+
     function handleErrors(response) {
       if (!response.ok) {
         throw Error(response.statusText);
@@ -58,20 +56,25 @@ class App extends Component {
       weatherData,
       errorMessage
     } = this.state;
-    
+
     return (
       <div className="App">
-        <h1>Weathering Heights</h1>
-        <h2>Pick a location</h2>
-        <SearchBar
-          callBackFromParent={this.getWeatherData}
-          error={errorMessage}
-        />
-        {searchDone && (
-          <WeatherCard
-            weatherData={weatherData}
+        <div style={{
+          position: 'absolute', left: '50%', top: '50%',
+          transform: 'translate(-50%, -50%)'
+        }}><h1>Weathering Heights</h1>
+
+          <h2>Pick a location</h2>
+          <SearchBar
+            callBackFromParent={this.getWeatherData}
+            error={errorMessage}
           />
-        )}
+          {searchDone && (
+            <WeatherCard
+              weatherData={weatherData}
+            />
+          )}
+        </div>
       </div>
     );
   }
