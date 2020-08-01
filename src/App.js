@@ -56,7 +56,6 @@ class App extends Component {
       weatherData,
       errorMessage
     } = this.state;
-
     return (
       <div className="App">
         <div style={{
